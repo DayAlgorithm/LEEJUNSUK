@@ -3,7 +3,7 @@
 #include <string.h>
 
 #define MAX 51
-#define INF 1000000
+#define aa 1000000
 
 int n;
 int graph[MAX][MAX];
@@ -16,7 +16,7 @@ void bfs(int start) {
     int front = 0, rear = 0;
 
     for (int i = 1; i <= n; i++) {
-        dist[i] = INF;
+        dist[i] = aa;
     }
 
     dist[start] = 0;
@@ -37,7 +37,7 @@ void bfs(int start) {
 
     int maxDist = 0;
     for (int i = 1; i <= n; i++) {
-        if (i != start && dist[i] != INF) {
+        if (i != start && dist[i] != aa) {
             if (dist[i] > maxDist) {
                 maxDist = dist[i];
             }
@@ -62,7 +62,7 @@ int main() {
         bfs(i);
     }
 
-    int minScore = INF;
+    int minScore = aa;
     for (int i = 1; i <= n; i++) {
         if (score[i] < minScore) {
             minScore = score[i];
